@@ -8,53 +8,31 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Settings from './pages/Settings';
 
 
 class App extends React.Component {
 
-constructor(props) {
-    super(props);
-  this.state = {
-    trainingTimeMinutes: 0, trainingTimeSeconds: 0,
-    breakTimeMinutes: 0, breakTimeSeconds: 0,
-  repetitions : 0,};
-  }
 
   render () {
-  return (
-    <div>
+    return (
+    <Router>
+    <Switch>
       
-      <label> Training Time 
-       </label>
-      
-      <input type="number" /> : <input type="number" /> 
-      
-      <br />
-      <br />
-      
-      
-      <label> Break time
-       </label>
-      
-      <input type="number" /> : <input type="number" /> 
-      
-      <br />
-      <br />
-      
-      
-      <label> Repeatitions
-       </label>
-      
-      <input type="number"/> 
- 
-      <br />
+      <Route path="/timerScreen">
+        
 
-      <br />
+      </Route>
       
-<button>GO </button>
+            <Route path="/">
+        <Settings/>
 
-</div>
+      </Route>
+      
 
+
+        </Switch>
+        </Router>
   );
 }
 }
