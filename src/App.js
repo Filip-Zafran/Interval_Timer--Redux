@@ -1,26 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+class App extends React.Component {
+
+constructor(props) {
+    super(props);
+  this.state = {
+    trainingTimeMinutes: 0, trainingTimeSeconds: 0,
+    breakTimeMinutes: 0, breakTimeSeconds: 0,
+  repetitions : 0,};
+  }
+
+  render () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      
+      <label> Training Time 
+       </label>
+      
+      <input type="number" /> : <input type="number" /> 
+      
+      <br />
+      <br />
+      
+      
+      <label> Break time
+       </label>
+      
+      <input type="number" /> : <input type="number" /> 
+      
+      <br />
+      <br />
+      
+      
+      <label> Repeatitions
+       </label>
+      
+      <input type="number"/> 
+ 
+      <br />
+
+      <br />
+      
+<button>GO </button>
+
+</div>
+
   );
 }
-
+}
 export default App;
