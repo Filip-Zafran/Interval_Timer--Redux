@@ -48,42 +48,60 @@ constructor(props) {
 
   render () {
   return (
-    <div>
+    <div id="mainDiv" >
       
-      <label> Training Time 
+      <label id="trainingTimeLabel" > Training Time 
        </label>
-      
-      <input type="number" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes}/> : <input type="number" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds}/> 
-      
-      <br />
+           
+      <div class="timerCells">
+      <input type="number" class="inputCell" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
+      <div class="semicolon">:</div> 
+      <input type="number" class="inputCell" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
+      </div>
+        
       <br />
       
       
       <label> Break time
        </label>
-      
-      <input type="number" value={this.state.breakTimeMinutes} onChange={this.setBreakTimeMinutes}/> : <input type="number" value={this.state.breakTimeSeconds} onChange={this.setBreakTimeSeconds}/> 
-      
+               
+           <div class="timerCells">
+      <input type="number" class="inputCell" value={this.state.breakTimeMinutes} onChange={this.setBreakTimeMinutes} /> 
+         <div class="semicolon">:</div> 
+      <input type="number" class="inputCell"  value={this.state.breakTimeSeconds} onChange={this.setBreakTimeSeconds} /> 
+      </div>
+
       <br />
-      <br />
-      
+     
       
       <label> Repetitions
        </label>
-      
-      <input type="number" value={this.state.repetitions} onChange={this.setRepetitions}/> 
- 
+         
+          <div class="timerCells">
+      <input type="number" class="inputCell" value={this.state.repetitions} onChange={this.setRepetitions}/> 
+ </div>
+        
       <br />
-
-      <br />
-      
+         
           <button
           // TO DO:
               // add link to Timer Screen and create a Timer Screen Page
               // pass data to it
+                >GO </button>
+      
+      <br />
 
-            
-          >GO </button>
+  {/* <View
+  style={{
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+  }}
+/> */}
+      
+      <div id="footer">
+      <p style={{'font-size': '20px'}}> <b>Interval Training Timer</b> </p>
+       <p2 style={{'font-size': '10px'}}><i>for the Berolina-Stralau Teams</i></p2>
+</div>
 
 </div>
 

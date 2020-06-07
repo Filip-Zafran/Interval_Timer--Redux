@@ -32,7 +32,55 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+#mainDiv {
+  background-color: darkgray;
+  /* height: 100%; */
+}
+
+#trainingTimeLabel {
+  font-size: 45px;
+}
+
+label {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  border-top: 5%;
+}
+
+.inputCell {
+  width: 30%;
+  height: 80px;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.timerCells {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  justify-content: center;
+  align-items: center;
+}
+
+.semicolon {
+  font-size: 70px;
+}
+
+#footer {
+  margin-top: 45px;
+  text-align: center;
+}
+
+p {
+  margin: 0;
 }
