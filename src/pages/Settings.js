@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+// import Logo from "./images/logo.png";
+// transparent background 
 
 
 class Settings extends React.Component {
@@ -74,7 +76,7 @@ constructor(props) {
       <br />
      
       
-      <label> Repetitions
+      <label> REPETITIONS
        </label>
          
           <div class="timerCells">
@@ -83,11 +85,13 @@ constructor(props) {
         
       <br />
          
-          <button
+      <div id="buttonDiv">
+          <button 
           // TO DO:
               // add link to Timer Screen and create a Timer Screen Page
               // pass data to it
-                >GO </button>
+        >GO </button>
+        </div>
       
       <br />
 
@@ -100,7 +104,9 @@ constructor(props) {
       
       <div id="footer">
       <p style={{'font-size': '20px'}}> <b>Interval Training Timer</b> </p>
-       <p2 style={{'font-size': '10px'}}><i>for the Berolina-Stralau Teams</i></p2>
+        <p2 style={{ 'font-size': '10px' }}><i>for the Berolina-Stralau Teams</i></p2>
+        {/* <Logo></Logo> */}
+
 </div>
 
 </div>
