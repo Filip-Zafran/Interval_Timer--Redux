@@ -47,8 +47,7 @@ label {
 	border-width: 5px;
 	border-color: rgb(216, 36, 45);
 	background-color: moccasin;
-	display: flex;
-	justify-content: center;
+
 }
 
 .timerCells {

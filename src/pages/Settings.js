@@ -8,6 +8,7 @@ import {
 import Logo from "../images/logo.png";
 import Plus from "../images/plus.png";
 import Minus from "../images/minus.png";
+import TimerScreen from "../pages/TimerScreen"
 
 
 class Settings extends React.Component {
@@ -15,8 +16,8 @@ class Settings extends React.Component {
 constructor(props) {
     super(props);
   this.state = {
-    trainingTimeMinutes: 0, trainingTimeSeconds: 0,
-    breakTimeMinutes: 0, breakTimeSeconds: 0,
+    trainingTimeMinutes: '00', trainingTimeSeconds: '00',
+    breakTimeMinutes: '00', breakTimeSeconds: 0,
     repetitions: 0,
   };
   this.setTrainingTimeMinutes = this.setTrainingTimeMinutes.bind(this);
@@ -58,7 +59,7 @@ constructor(props) {
       <label id="trainingTimeLabel" > TRAINING TIME 
        </label>
       
-            <Link to="/">
+            <button>
           <img
             className="logoImg"
             style={{
@@ -69,14 +70,15 @@ constructor(props) {
                           }}
             src={Logo}
             alt="berolina-stralau logo"
-        />              </Link>
+        />              </button>
       
-
+        
 
     
       <div class="timerCells">
-                     
-              <Link to="/">
+
+        <div>
+        <button>
           <img
             className="minusImg"
             style={{
@@ -85,7 +87,9 @@ constructor(props) {
             src={Minus}
             alt="minus symbol"
           />
-          </Link>
+          </button>
+          </div>
+>
      
     
         <div class="innerTimerCells">
@@ -142,8 +146,10 @@ constructor(props) {
           1
         </div>
 
+        <div class="innerTimerCells">
       <input type="number" class="inputCell" value={this.state.repetitions} onChange={this.setRepetitions}/> 
-
+</div>
+          
         <div>
           3
         </div>
@@ -153,21 +159,18 @@ constructor(props) {
       <br />
          
       <div id="buttonDiv">
-          <button 
-          // TO DO:
+       
+                             {/* // TO DO:
               // add link to Timer Screen and create a Timer Screen Page
-              // pass data to it
-        >GO </button>
+              // pass data to it */}
+          
+          <Link to="/TimerScreen">GO</Link>
+                 
         </div>
       
       <br />
 
-  {/* <View
-  style={{
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-  }}
-/> */}
+  <hr/>
       
       <div id="footer">
       <p style={{'font-size': '20px'}}> <b>Interval Training Timer</b> </p>
