@@ -17,7 +17,7 @@ constructor(props) {
     super(props);
   this.state = {
     trainingTimeMinutes: '00', trainingTimeSeconds: '00',
-    breakTimeMinutes: '00', breakTimeSeconds: 0,
+    breakTimeMinutes: '00', breakTimeSeconds: '00',
     repetitions: 0,
   };
   this.setTrainingTimeMinutes = this.setTrainingTimeMinutes.bind(this);
@@ -52,14 +52,18 @@ constructor(props) {
 
   render () {
   return (
-    <div id="mainDiv" >
+    <div className="mainDiv" >
 
-
+         <div id="header">
+     Interval Training Timer
+       </div>
+        
+        <hr className="horzLine"/>
       
       <label id="trainingTimeLabel" > TRAINING TIME 
        </label>
       
-            <button>
+    {/* // BACKGROUND PICTURE  */}
           <img
             className="logoImg"
             style={{
@@ -70,15 +74,14 @@ constructor(props) {
                           }}
             src={Logo}
             alt="berolina-stralau logo"
-        />              </button>
+        />             
       
-        
-
+    
     
       <div class="timerCells">
 
-        <div>
-        <button>
+    
+
           <img
             className="minusImg"
             style={{
@@ -87,28 +90,30 @@ constructor(props) {
             src={Minus}
             alt="minus symbol"
           />
-          </button>
-          </div>
->
+          
+       
+
      
     
-        <div class="innerTimerCells">
-      <input type="number" class="inputCell" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
-      <div class="semicolon">:</div> 
-      <input type="number" class="inputCell" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
+        <div className="innerTimerCells">
+      <input type="number" className="inputCell" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
+      <div className="semicolon">:</div> 
+      <input type="number" className="inputCell" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
         </div>
         
-        <div>
-          3
-        </div>
+        <img
+            className="plusImg"
+            style={{
+              width: "5%",
+                            }}
+            src={Plus}
+            alt="plus symbol"
+          />
         
 
 
 
-        </div>
-        
-      
-
+        </div> 
       <br/>
             
 
@@ -116,21 +121,19 @@ constructor(props) {
       <label> BREAK 
        </label>
                  
-      <div class="timerCells">
+      <div className="timerCells">
         
 <div>
           1
         </div>
 
-         <div class="innerTimerCells">
-      <input type="number" class="inputCell" value={this.state.breakTimeMinutes} onChange={this.setBreakTimeMinutes} /> 
-         <div class="semicolon">:</div> 
-      <input type="number" class="inputCell"  value={this.state.breakTimeSeconds} onChange={this.setBreakTimeSeconds} /> 
+         <div className="innerTimerCells">
+      <input type="number" className="inputCell" value={this.state.breakTimeMinutes} onChange={this.setBreakTimeMinutes} /> 
+         <div className="semicolon">:</div> 
+      <input type="number" className="inputCell"  value={this.state.breakTimeSeconds} onChange={this.setBreakTimeSeconds} /> 
         </div>
         
-<div>
-          3
-        </div>
+
 
       </div>
 
@@ -140,14 +143,14 @@ constructor(props) {
       <label> REPETITIONS
        </label>
          
-      <div class="timerCells">
+      <div className="timerCells">
         
         <div>
           1
         </div>
 
-        <div class="innerTimerCells">
-      <input type="number" class="inputCell" value={this.state.repetitions} onChange={this.setRepetitions}/> 
+        <div className="innerTimerCells">
+      <input type="number" className="inputCell" value={this.state.repetitions} onChange={this.setRepetitions}/> 
 </div>
           
         <div>
@@ -164,21 +167,20 @@ constructor(props) {
               // add link to Timer Screen and create a Timer Screen Page
               // pass data to it */}
           
-          <Link to="/TimerScreen">GO</Link>
+        <Link to="/TimerScreen.js"
+        id="goButton">GO</Link>
                  
         </div>
       
       <br />
-
-  <hr/>
       
+  <hr className="horzLine"/>
+      
+{/* BEEP SETTINGS / variable or fixed ?  */}
+
       <div id="footer">
-      <p style={{'font-size': '20px'}}> <b>Interval Training Timer</b> </p>
-        <p2 style={{ 'font-size': '10px' }}><i>for the Berolina-Stralau Teams</i></p2>
-
-         
-
-</div>
+             © Berolina-Futsal Team 2020
+       </div>
 
 </div>
 

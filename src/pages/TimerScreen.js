@@ -12,7 +12,7 @@ class TimerScreen extends React.Component {
 
     render () {
   return (
-      <div id="mainDiv" >
+      <div className="mainDiv" >
       
       </div>
 
