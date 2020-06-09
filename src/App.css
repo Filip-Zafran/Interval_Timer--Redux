@@ -36,7 +36,7 @@ label {
 }
 
 .inputCell {
-	width: 30%;
+	width: 100px;
 	height: 80px;
 	font-size: 70px;
 	color: rgb(90, 2, 2);
@@ -49,7 +49,7 @@ label {
 
 .timerCells {
 	display: grid;
-	grid-template-columns: 10% 80% 10%;
+	grid-template-columns: 15% 70% 15%;
 }
 
 .innerTimerCells {
@@ -101,4 +101,21 @@ label {
 	margin-top: 10px;
 	height: 5px;
 	color: moccasin;
+}
+
+#plusImgTT {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 40px;
+}
+
+#minusImgTT {
+	display: block;
+	/* justify-content: center;
+	align-items: center;
+	align-content: center; */
+	width: 40px;
+	float: right;
 }

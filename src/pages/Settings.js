@@ -83,18 +83,12 @@ constructor(props) {
     
 
           <img
-            className="minusImg"
-            style={{
-              width: "5%",
-                            }}
-            src={Minus}
+            id="minusImgTT"
+                    src={Minus}
             alt="minus symbol"
           />
           
-       
-
-     
-    
+                
         <div className="innerTimerCells">
       <input type="number" className="inputCell" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
       <div className="semicolon">:</div> 
@@ -102,17 +96,11 @@ constructor(props) {
         </div>
         
         <img
-            className="plusImg"
-            style={{
-              width: "5%",
-                            }}
-            src={Plus}
+            id="plusImgTT"
+                      src={Plus}
             alt="plus symbol"
           />
         
-
-
-
         </div> 
       <br/>
             
