@@ -49,7 +49,18 @@ label {
 
 .timerCells {
 	display: grid;
+	align-items: center;
+	justify-items: center;
 	grid-template-columns: 15% 70% 15%;
+}
+
+#plusImgTT,
+#minusImgTT {
+	width: 35px;
+}
+
+#timerImg {
+	width: 20px;
 }
 
 .innerTimerCells {
@@ -101,21 +112,4 @@ label {
 	margin-top: 10px;
 	height: 5px;
 	color: moccasin;
-}
-
-#plusImgTT {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	width: 40px;
-}
-
-#minusImgTT {
-	display: block;
-	/* justify-content: center;
-	align-items: center;
-	align-content: center; */
-	width: 40px;
-	float: right;
 }

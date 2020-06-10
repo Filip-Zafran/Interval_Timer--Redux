@@ -8,6 +8,7 @@ import {
 import Logo from "../images/logo.png";
 import Plus from "../images/plus.png";
 import Minus from "../images/minus.png";
+import Timer from "../images/timer.png";
 import TimerScreen from "../pages/TimerScreen"
 
 
@@ -55,7 +56,21 @@ constructor(props) {
     <div className="mainDiv" >
 
          <div id="header">
-     Interval Training Timer
+              <img
+            id="timerImg"
+                    src={Timer}
+            alt="timer symbol"
+          />
+        
+      &nbsp;
+           &nbsp;Interval Training Timer&nbsp;&nbsp;
+         
+         
+          <img
+            id="timerImg"
+                    src={Timer}
+            alt="timer symbol"
+          />
        </div>
         
         <hr className="horzLine"/>
@@ -111,9 +126,11 @@ constructor(props) {
                  
       <div className="timerCells">
         
-<div>
-          1
-        </div>
+   <img
+            id="minusImgTT"
+                    src={Minus}
+            alt="minus symbol"
+          />
 
          <div className="innerTimerCells">
       <input type="number" className="inputCell" value={this.state.breakTimeMinutes} onChange={this.setBreakTimeMinutes} /> 
@@ -121,7 +138,11 @@ constructor(props) {
       <input type="number" className="inputCell"  value={this.state.breakTimeSeconds} onChange={this.setBreakTimeSeconds} /> 
         </div>
         
-
+  <img
+            id="plusImgTT"
+                      src={Plus}
+            alt="plus symbol"
+          />
 
       </div>
 
@@ -132,18 +153,22 @@ constructor(props) {
        </label>
          
       <div className="timerCells">
-        
-        <div>
-          1
-        </div>
+
+          <img
+            id="minusImgTT"
+                    src={Minus}
+            alt="minus symbol"
+          />
 
         <div className="innerTimerCells">
       <input type="number" className="inputCell" value={this.state.repetitions} onChange={this.setRepetitions}/> 
 </div>
           
-        <div>
-          3
-        </div>
+ <img
+            id="plusImgTT"
+                      src={Plus}
+            alt="plus symbol"
+          />
 
       </div>
         
