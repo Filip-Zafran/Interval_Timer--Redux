@@ -14,18 +14,20 @@ import TimerScreen from "../pages/TimerScreen"
 
 class Settings extends React.Component {
 
-constructor(props) {
+  constructor(props) {
     super(props);
-  this.state = {
-    trainingTimeMinutes: '00', trainingTimeSeconds: '00',
-    breakTimeMinutes: '00', breakTimeSeconds: '00',
-    repetitions: 0,
-  };
-  this.setTrainingTimeMinutes = this.setTrainingTimeMinutes.bind(this);
-  this.setTrainingTimeSeconds = this.setTrainingTimeSeconds.bind(this);
-  this.setBreakTimeMinutes = this.setBreakTimeMinutes.bind(this);
-  this.setBreakTimeSeconds= this.setBreakTimeSeconds.bind(this);
-   this.setRepetitions = this.setRepetitions.bind(this);
+    this.state = {
+      trainingTimeMinutes: '00', trainingTimeSeconds: '00',
+      breakTimeMinutes: '00', breakTimeSeconds: '00',
+      repetitions: 0,
+      sound: false,
+      fontOpacity: 0.4,
+    };
+    this.setTrainingTimeMinutes = this.setTrainingTimeMinutes.bind(this);
+    this.setTrainingTimeSeconds = this.setTrainingTimeSeconds.bind(this);
+    this.setBreakTimeMinutes = this.setBreakTimeMinutes.bind(this);
+    this.setBreakTimeSeconds = this.setBreakTimeSeconds.bind(this);
+    this.setRepetitions = this.setRepetitions.bind(this);
   }
 
 
@@ -49,12 +51,17 @@ constructor(props) {
     this.setState({ repetitions: parseInt(event.target.value) })
   }
 
+// function Sound() {
+//   if (#checkboxSound is checked) {
+//     return className="beepCheckbox2" & className="beepCheckbox" style={{opacity: "1.0"}}
+//   }
+// }
 
 
   render () {
     return (
     
-    <div class="mainDiv" >
+    <div className="mainDiv" >
 
          <div id="header">
               <img
@@ -74,7 +81,7 @@ constructor(props) {
           />
        </div>
         
-        <hr class="horzLine"/>
+        <hr className="horzLine"/>
       
       <label id="trainingTimeLabel" > TRAINING TIME 
        </label>
@@ -94,7 +101,7 @@ constructor(props) {
       
     
     
-      <div class="timerCells">
+      <div className="timerCells">
 
     
 
@@ -187,49 +194,56 @@ constructor(props) {
       <div id="beepSettings">
           <h2>SOUND SETTINGS </h2>
 
-                    <div class="beepDiv">
-        <label class="beepLabel"> SOUND ON:      </label>
-            <input class="beepCheckbox" type="checkbox"></input>
+          <div className="beepDiv">
+            <label className="beepLabel" id="labelSound" > SOUND ON:</label>
+            <input
+              id="checkboxSound"
+              className="beepCheckbox"
+              type="checkbox"
+              onClick={(e) => this.setState({ sound: e.target.checked, })}
+            />
           </div>
 
-             <div class="beepDiv">
-          <label class="beepLabel"> HALF TIME MARK:      </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+             <div className="beepDiv">
+          <label className="beepLabel"> HALF TIME MARK:      </label>
+            <input disabled={!this.state.sound} id="checkboHalf" className="beepCheckbox2" type="checkbox"></input>
           </div>
 
-              <div class="beepDiv">
-          <label class="beepLabel"> 30sec MARK:   </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+              <div className="beepDiv">
+          <label className="beepLabel"> 30sec MARK:   </label>
+              <input disabled={!this.state.sound} id="checkbox30" className="beepCheckbox" type="checkbox"></input>
           </div>
 
-              <div class="beepDiv">
-          <label class="beepLabel"> 20sec MARK:      </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+              <div className="beepDiv">
+          <label className="beepLabel"> 20sec MARK:      </label>
+              <input disabled={!this.state.sound} id="checkbox20" className="beepCheckbox2" type="checkbox"></input>
           </div>
 
-              <div class="beepDiv">
-          <label class="beepLabel"> 10sec MARK:     </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+              <div className="beepDiv">
+          <label className="beepLabel"> 10sec MARK:     </label>
+              <input disabled={!this.state.sound} id="checkbox10" className="beepCheckbox" type="checkbox"></input>
           </div>
 
-              <div class="beepDiv">
-          <label class="beepLabel"> 10sec COUNTDOWN:      </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+              <div className="beepDiv">
+          <label className="beepLabel"> 10sec COUNTDOWN:      </label>
+              <input disabled={!this.state.sound} id="checkboxCountdown" className="beepCheckbox2" type="checkbox"></input>
           </div>
 
-                <div class="beepDiv">
-          <label class="beepLabel"> MOTIVATION SHOUT:    </label>
-              <input class="beepCheckbox" type="checkbox"></input>
+                <div className="beepDiv">
+          <label className="beepLabel"> <i>MOTIVATION SPEACHES </i>    </label>
+              <input disabled={!this.state.sound} id="checkboxMotivational"  className="beepCheckbox" type="checkbox"></input>
           </div>
       
             </div>
 
             <br />
       
-  <hr class="horzLine"/>
+  <hr className="horzLine"/>
 
-      <div id="footer">
-             © Berolina-Futsal Team 2020
+        <div id="footer">
+           
+             © Berolina-Stralau Futsal Team 2020
+               
        </div>
 
 </div>
