@@ -52,8 +52,9 @@ constructor(props) {
 
 
   render () {
-  return (
-    <div className="mainDiv" >
+    return (
+    
+    <div class="mainDiv" >
 
          <div id="header">
               <img
@@ -73,7 +74,7 @@ constructor(props) {
           />
        </div>
         
-        <hr className="horzLine"/>
+        <hr class="horzLine"/>
       
       <label id="trainingTimeLabel" > TRAINING TIME 
        </label>
@@ -175,21 +176,57 @@ constructor(props) {
       <br />
          
       <div id="buttonDiv">
-       
-                             {/* // TO DO:
-              // add link to Timer Screen and create a Timer Screen Page
-              // pass data to it */}
-          
-        <Link to="/TimerScreen.js"
+              
+                  <Link to="/TimerScreen"
         id="goButton">GO</Link>
-                 
+                
         </div>
+            <br />
+
+       
+      <div id="beepSettings">
+          <h2>SOUND SETTINGS </h2>
+
+                    <div class="beepDiv">
+        <label class="beepLabel"> SOUND ON:      </label>
+            <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+             <div class="beepDiv">
+          <label class="beepLabel"> HALF TIME MARK:      </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+              <div class="beepDiv">
+          <label class="beepLabel"> 30sec MARK:   </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+              <div class="beepDiv">
+          <label class="beepLabel"> 20sec MARK:      </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+              <div class="beepDiv">
+          <label class="beepLabel"> 10sec MARK:     </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+              <div class="beepDiv">
+          <label class="beepLabel"> 10sec COUNTDOWN:      </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
+
+                <div class="beepDiv">
+          <label class="beepLabel"> MOTIVATION SHOUT:    </label>
+              <input class="beepCheckbox" type="checkbox"></input>
+          </div>
       
-      <br />
+            </div>
+
+            <br />
       
-  <hr className="horzLine"/>
-      
-{/* BEEP SETTINGS / variable or fixed ?  */}
+  <hr class="horzLine"/>
 
       <div id="footer">
              © Berolina-Futsal Team 2020

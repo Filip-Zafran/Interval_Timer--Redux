@@ -1,22 +1,21 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Logo from "../images/logo.png";
+import UIfx from 'uifx';
+// https://www.npmjs.com/package/uifx
 
 
 class TimerScreen extends React.Component {
-
-    render () {
-  return (
-      <div className="mainDiv" >
+  
+    render() {
+      return (
+        <div>
       
-      </div>
 
-  );
-}
+         <h1>test</h1>
+           
+        </div>
+
+      );
+    }
+  
 }
 export default TimerScreen;
