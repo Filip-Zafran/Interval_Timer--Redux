@@ -80,10 +80,12 @@ state = {
             alt="berolina-stralau logo"
         />             
 
+          
+
                    
           <div className="countdownClock">
             { minutes === 0 && seconds === 0
-                    ? <p>Short break</p>
+                    ? <div className="endTime"> Time is up! <br/>  00:00</div>
                     : <h3> {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h3>
                 }               
              </div>

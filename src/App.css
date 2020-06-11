@@ -136,6 +136,8 @@ h2 {
 	text-decoration: none;
 	box-shadow: 3px 6px #888888;
 	text-shadow: 2px 3px #888888;
+	position: relative;
+	z-index: 2;
 }
 
 #resetButtonBlue {
@@ -213,6 +215,8 @@ h2 {
 	/* z-index: "1"; */
 }
 
-p {
-	font-size: 55px;
+.endTime {
+	font-size: 66px;
+
+
 }
