@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Settings from './pages/Settings';
 import TimerScreen from './pages/TimerScreen';
+import PauseScreen from './pages/PauseScreen';
 
 
 class App extends React.Component {
@@ -22,7 +23,12 @@ class App extends React.Component {
       
         <Route path="/TimerScreen">
           <TimerScreen/>
-        </Route>
+          </Route>
+          
+          <Route path="/PauseScreen">
+          <PauseScreen/>
+          </Route>
+
       
         <Route path="/">
           <Settings />

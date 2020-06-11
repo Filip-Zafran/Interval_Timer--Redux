@@ -80,12 +80,6 @@ class Settings extends React.Component {
     {/* // BACKGROUND PICTURE  */}
           <img
             className="logoImg"
-            style={{
-              width: "100%",
-              opacity: "0.07",
-                    position: "absolute",
-                  zIndex: "1"
-                          }}
             src={Logo}
             alt="berolina-stralau logo"
         />             

@@ -2,6 +2,7 @@ import React from 'react';
 import UIfx from 'uifx';
 // https://www.npmjs.com/package/uifx
 import Logo from "../images/logo.png";
+import Timer from "../images/timer.png";
 import Circle from "../images/circle.png";
 import {
   BrowserRouter as Router,
@@ -12,49 +13,101 @@ import {
 
 
 class TimerScreen extends React.Component {
+
+
+     componentDidMount() {
+  this.myInterval = setInterval(() => {
+    const { seconds, minutes } = this.state
+    if (seconds > 0) {
+      this.setState(({ seconds }) => ({
+        seconds: seconds - 1
+      }))
+    }
+    if (seconds === 0) {
+      if (minutes === 0) {
+        clearInterval(this.myInterval)
+      } else {
+        this.setState(({ minutes }) => ({
+          minutes: minutes - 1,
+          seconds: 59
+        }))
+      }
+    }
+  }, 1000)
+     }
+  
+      componentWillUnmount() {
+        clearInterval(this.myInterval)
+    }
+
   
 state = {
-  minutes: 3,
-  seconds: 0,
+  minutes: 0,
+  seconds: 6,
   reps: 3
 }
 
   render() {
       
-  const { minutes, seconds, reps } = this.state
-
+    const { minutes, seconds, reps } = this.state
+    
       return (
    
-
-
     <div className="mainDiv" >
       
+                   <div id="header">
+              <img
+            id="timerImg"
+                    src={Timer}
+            alt="timer symbol"
+          />
+              &nbsp;
+           &nbsp;Interval Training Timer&nbsp;&nbsp;
+         
+         
+          <img
+            id="timerImg"
+                    src={Timer}
+            alt="timer symbol"
+          />
+       </div>
+        
+        <hr className="horzLine"/>
+
                <img
             className="logoImg"
-            style={{
-              width: "100%",
-              opacity: "0.07",
-                    position: "absolute",
-                  zIndex: "-1"
-                          }}
             src={Logo}
             alt="berolina-stralau logo"
         />             
 
                    
-          <div className="coundownClock">  { minutes < 10 ? `0${ minutes }` : minutes }:{ seconds < 10 ? `0${ seconds }` : seconds } </div>
+          <div className="countdownClock">
+            { minutes === 0 && seconds === 0
+                    ? <p>Short break</p>
+                    : <h3> {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h3>
+                }               
+             </div>
          
+
           <img id="circleImg" src={Circle} />
           <div className="repetitionsCount"> <i>reps left: {reps}</i> </div>
 
        
 
             <div id="buttonDiv">
-                                <Link to="/TimerScreen"
+                                <Link to="/PauseScreen"
         className="goButton">PAUSE</Link>
                 
         </div>
             <br />
+
+            <hr className="horzLine"/>
+
+        <div id="footer">
+           
+             © Berolina-Stralau Futsal Team 2020
+               
+       </div>
 
         </div>
 
