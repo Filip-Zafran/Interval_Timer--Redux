@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Metal+Mania&display=swap" rel="stylesheet'),
 .App-link {
 	color: #61dafb;
@@ -8,7 +7,6 @@
 	color: rgb(90, 2, 2);
 	background-color: rgb(250, 187, 135);
 	font-family: 'Caveat Brush', cursive;
-
 }
 
 #trainingTimeLabel {
@@ -19,7 +17,6 @@
 	justify-items: left;
 }
 
-
 label {
 	font-size: 35px;
 	display: flex;
@@ -27,19 +24,6 @@ label {
 	padding-top: 5%;
 	position: "absolute";
 	z-index: "1";
-}
-
-.beepLabel {
-	transition: opacity .2 ease;
-	font-size: 12px;
-	justify-content: left;
-	margin-left: 30px;
-	padding-top: 5px;
-	opacity: 0.4;
-}
-
-.beepLabelOn {
-	opacity: 1;
 }
 
 .beepCheckbox {
@@ -52,19 +36,36 @@ label {
 	opacity: 0.4;
 }
 
+.beepLabel {
+	transition: opacity .2 ease;
+	font-size: 12px;
+	justify-content: left;
+	margin-left: 30px;
+	padding-top: 5px;
+	opacity: 0.4;
+}
+
+.beepLabelOn {
+	transition: opacity .2 ease;
+	font-size: 12px;
+	justify-content: left;
+	margin-left: 30px;
+	padding-top: 5px;
+	opacity: 1;
+}
+
 #labelSound {
 	font-size: 16px;
 }
 
- #checkboxSound {
-width: 90%;
-height: 90%;
- }
+#checkboxSound {
+	width: 90%;
+	height: 90%;
+}
 
 .beepDiv {
 	display: grid;
 	grid-template-columns: 50% 5%;
-
 }
 
 h2 {
@@ -97,8 +98,8 @@ h2 {
 
 #minusImgTTbeep,
 #plusImgTTbeep {
-		width: 15px;
-		}
+	width: 15px;
+}
 
 #beepSettings {
 	justify-content: left;
@@ -121,16 +122,17 @@ h2 {
 	background-color: none;
 }
 
-#goButton {
-	display: inline-block;
-	height: 70px;
+.goButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
 	width: 90%;
 	font-weight: bold;
-	font-size: 60px;
+	font-size: 80px;
 	background-color: rgb(216, 36, 45);
 	border: none;
 	color: white;
-	text-align: center;
 	text-decoration: none;
 	box-shadow: 3px 6px #888888;
 	text-shadow: 2px 3px #888888;
@@ -161,4 +163,29 @@ h2 {
 	margin-top: 10px;
 	height: 5px;
 	color: moccasin;
+}
+
+#circleImg {
+	width: 100%;
+	margin-bottom: 40px;
+	position: "absolute";
+	z-index: "1";
+}
+
+.coundownClock {
+	display: flex;
+	justify-content: center;
+	font-size: 111px;
+	font-weight: bold;
+	position: "absolute";
+	z-index: "2";
+}
+
+.repetitionsCount {
+	display: flex;
+	justify-content: center;
+	font-size: 33px;
+	font-weight: italic;
+
+	/* z-index: "1"; */
 }

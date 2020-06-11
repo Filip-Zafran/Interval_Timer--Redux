@@ -9,7 +9,7 @@ import Logo from "../images/logo.png";
 import Plus from "../images/plus.png";
 import Minus from "../images/minus.png";
 import Timer from "../images/timer.png";
-import TimerScreen from "../pages/TimerScreen"
+
 
 
 class Settings extends React.Component {
@@ -21,7 +21,7 @@ class Settings extends React.Component {
       breakTimeMinutes: '00', breakTimeSeconds: '00',
       repetitions: 0,
       sound: false,
-      fontOpacity: 0.4,
+      // fontOpacity: 0.4,
     };
     this.setTrainingTimeMinutes = this.setTrainingTimeMinutes.bind(this);
     this.setTrainingTimeSeconds = this.setTrainingTimeSeconds.bind(this);
@@ -50,15 +50,7 @@ class Settings extends React.Component {
   setRepetitions (event) {
     this.setState({ repetitions: parseInt(event.target.value) })
   }
-
-// function Sound() {
-//   if (#checkboxSound is checked) {
-//     return className="beepCheckbox2" & className="beepCheckbox" style={{opacity: "1.0"}}
-//   }
-// }
-
-
-  render () {
+ render () {
     return (
     
     <div className="mainDiv" >
@@ -69,8 +61,7 @@ class Settings extends React.Component {
                     src={Timer}
             alt="timer symbol"
           />
-        
-      &nbsp;
+              &nbsp;
            &nbsp;Interval Training Timer&nbsp;&nbsp;
          
          
@@ -103,9 +94,7 @@ class Settings extends React.Component {
     
       <div className="timerCells">
 
-    
-
-          <img
+              <img
             id="minusImgTT"
                     src={Minus}
             alt="minus symbol"
@@ -185,7 +174,7 @@ class Settings extends React.Component {
       <div id="buttonDiv">
               
                   <Link to="/TimerScreen"
-        id="goButton">GO</Link>
+        className="goButton">GO</Link>
                 
         </div>
             <br />
@@ -195,43 +184,45 @@ class Settings extends React.Component {
           <h2>SOUND SETTINGS </h2>
 
           <div className="beepDiv">
-            <label className="beepLabel" id="labelSound" > SOUND ON:</label>
+            <label className="beepLabel" className="beepLabelOn"  id="labelSound" > <u>SOUND ON:</u></label>
             <input
               id="checkboxSound"
               className="beepCheckbox"
               type="checkbox"
-              onClick={(e) => this.setState({ sound: e.target.checked, })}
+              onClick={(e) => this.setState({ sound: e.target.checked})}
             />
+            {/* fontOpacity: e.target.checked  */}
           </div>
 
              <div className="beepDiv">
-          <label className="beepLabel"> HALF TIME MARK:      </label>
-            <input disabled={!this.state.sound} id="checkboHalf" className="beepCheckbox2" type="checkbox"></input>
+          <label className="beepLabel" className="beepLabelOn" > HALF TIME MARK:      </label>
+            <input disabled={!this.state.sound} id="checkboxHalf" className="beepCheckbox2" type="checkbox"></input>
+         {/* && !this.state.fontOpacity */}
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel"> 30sec MARK:   </label>
-              <input disabled={!this.state.sound} id="checkbox30" className="beepCheckbox" type="checkbox"></input>
+          <label className="beepLabel" className="beepLabelOn"> 30sec MARK:   </label>
+              <input disabled={!this.state.sound} id="checkbox30"  className="beepCheckbox" type="checkbox"></input>
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel"> 20sec MARK:      </label>
-              <input disabled={!this.state.sound} id="checkbox20" className="beepCheckbox2" type="checkbox"></input>
+          <label className="beepLabel" className="beepLabelOn"> 20sec MARK:      </label>
+              <input disabled={!this.state.sound} id="checkbox20"  className="beepCheckbox2" type="checkbox"></input>
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel"> 10sec MARK:     </label>
-              <input disabled={!this.state.sound} id="checkbox10" className="beepCheckbox" type="checkbox"></input>
-          </div>
+          <label className="beepLabel" className="beepLabelOn"> 10sec MARK:     </label>
+              <input disabled={!this.state.sound} id="checkbox10"  className="beepCheckbox" type="checkbox"></input>
+                   </div>
 
               <div className="beepDiv">
-          <label className="beepLabel"> 10sec COUNTDOWN:      </label>
+          <label className="beepLabel" className="beepLabelOn"> 10sec COUNTDOWN:      </label>
               <input disabled={!this.state.sound} id="checkboxCountdown" className="beepCheckbox2" type="checkbox"></input>
           </div>
 
                 <div className="beepDiv">
-          <label className="beepLabel"> <i>MOTIVATION SPEACHES </i>    </label>
-              <input disabled={!this.state.sound} id="checkboxMotivational"  className="beepCheckbox" type="checkbox"></input>
+          <label className="beepLabel" className="beepLabelOn"> <i>MOTIVATION SPEACHES </i>    </label>
+              <input disabled={!this.state.sound} id="checkboxMotivational"   className="beepCheckbox" type="checkbox"></input>
           </div>
       
             </div>
