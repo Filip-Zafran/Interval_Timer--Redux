@@ -96,12 +96,18 @@ state = {
 
        
 
-            <div id="buttonDiv">
+            <div id="pauseDiv">
                                 <Link to="/PauseScreen"
         className="goButton">PAUSE</Link>
-                
-        </div>
+                       </div>
+          <br />
+          
+                    <div id="setingsDiv">
+                                <Link to="/"
+        >Settings</Link>
+                       </div>
             <br />
+
 
             <hr className="horzLine"/>
 
