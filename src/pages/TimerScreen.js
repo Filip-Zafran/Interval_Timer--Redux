@@ -5,7 +5,7 @@ import Logo from "../images/logo.png";
 import Timer from "../images/timer.png";
 import Circle from "../images/circle.png";
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router, 
   Switch,
   Route,
   Link
@@ -103,8 +103,8 @@ state = {
           <br />
           
                     <div id="setingsDiv">
-                                <Link to="/"
-        >Settings</Link>
+                                <Link to="/" className="settingsButton"
+        >SETTINGS</Link>
                        </div>
             <br />
 
