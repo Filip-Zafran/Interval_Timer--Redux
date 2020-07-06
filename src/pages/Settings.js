@@ -189,33 +189,33 @@ class Settings extends React.Component {
           </div>
 
              <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn" > HALF TIME MARK:      </label>
+          <label className="beepLabel" className="beepLabelOn" > &nbsp;&nbsp;HALF TIME MARK:      </label>
             <input disabled={!this.state.sound} id="checkboxHalf" className="beepCheckbox2" type="checkbox"></input>
          {/* && !this.state.fontOpacity */}
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn"> 30sec MARK:   </label>
+          <label className="beepLabel" className="beepLabelOn"> &nbsp;&nbsp;30sec MARK:   </label>
               <input disabled={!this.state.sound} id="checkbox30"  className="beepCheckbox" type="checkbox"></input>
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn"> 20sec MARK:      </label>
+          <label className="beepLabel" className="beepLabelOn"> &nbsp;&nbsp;20sec MARK:      </label>
               <input disabled={!this.state.sound} id="checkbox20"  className="beepCheckbox2" type="checkbox"></input>
           </div>
 
               <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn"> 10sec MARK:     </label>
+          <label className="beepLabel" className="beepLabelOn"> &nbsp;&nbsp;10sec MARK:     </label>
               <input disabled={!this.state.sound} id="checkbox10"  className="beepCheckbox" type="checkbox"></input>
                    </div>
 
               <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn"> 10sec COUNTDOWN:      </label>
+          <label className="beepLabel" className="beepLabelOn"> &nbsp;&nbsp;10sec COUNTDOWN:      </label>
               <input disabled={!this.state.sound} id="checkboxCountdown" className="beepCheckbox2" type="checkbox"></input>
           </div>
 
                 <div className="beepDiv">
-          <label className="beepLabel" className="beepLabelOn"> <i>MOTIVATION SPEACHES </i>    </label>
+          <label className="beepLabel" className="beepLabelOn"> <i>&nbsp;&nbsp;MOTIVATION SPEACHES </i>    </label>
               <input disabled={!this.state.sound} id="checkboxMotivational"   className="beepCheckbox" type="checkbox"></input>
           </div>
       
