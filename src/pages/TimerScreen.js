@@ -43,7 +43,7 @@ class TimerScreen extends React.Component {
   
 state = {
   minutes: 0,
-  seconds: 6,
+  seconds: 20,
   reps: 3
 }
 
@@ -85,18 +85,17 @@ state = {
                    
           <div className="countdownClock">
             { minutes === 0 && seconds === 0
-                    ? <div className="endTime"> Time is up! <br/>  00:00</div>
-                    : <h3> {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h3>
+                    ? <div className="timeIsUp"> Time is up!  <br/>  00:00</div>
+                    : <div className="coundownTime"> {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
                 }               
              </div>
          
 
           <img id="circleImg" src={Circle} />
+
           <div className="repetitionsCount"> <i>reps left: {reps}</i> </div>
 
-       
-
-            <div id="pauseDiv">
+                   <div id="pauseDiv">
                                 <Link to="/PauseScreen"
         className="goButton">PAUSE</Link>
                        </div>
