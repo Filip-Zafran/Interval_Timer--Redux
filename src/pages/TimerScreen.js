@@ -43,7 +43,7 @@ class TimerScreen extends React.Component {
   
 state = {
   minutes: 0,
-  seconds: 20,
+  seconds: 2,
   reps: 3
 }
 

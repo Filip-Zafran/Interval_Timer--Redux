@@ -32,11 +32,17 @@ class Settings extends React.Component {
 
 
   setTrainingTimeMinutes(event) {
-    this.setState({ trainingTimeMinutes: parseInt(event.target.value) })
+    const trainingTimeMinutes = String(parseInt(event.target.value, 10)).padStart(2, '0');
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+
+    this.setState({ trainingTimeMinutes });
+    // same as without when same name
+        // this.setState({ trainingTimeMinutes: trainingTimeMinutes });
   }
   
   setTrainingTimeSeconds(event) {
-    this.setState({ trainingTimeSeconds: parseInt(event.target.value) })
+    const trainingTimeSeconds = String(parseInt(event.target.value, 10)).padStart(2, '0');
+    this.setState({ trainingTimeSeconds });
   }
   
     setBreakTimeMinutes(event) {
@@ -51,18 +57,21 @@ class Settings extends React.Component {
     this.setState({ repetitions: parseInt(event.target.value) })
   }
  render () {
-    return (
+   return (
+      
+     // BACKHROUND IMAGE CHANGE i vrati BACKGROUND IMAGE KAJ JE IZBRISAO
+     
     
-    <div className="mainDiv" >
+      <div className="mainDiv" style={{ backgroundImage: Logo }} >
 
          <div id="header">
-              <img
-            id="timerImg"
-                    src={Timer}
-            alt="timer symbol"
-          />
-              &nbsp;
-           &nbsp;Interval Training Timer&nbsp;&nbsp;
+            <img
+              id="timerImg"
+              src={Timer}
+              alt="timer symbol"
+            />
+            &nbsp;
+            &nbsp;Interval Training Timer&nbsp;&nbsp;
          
          
           <img
@@ -74,17 +83,8 @@ class Settings extends React.Component {
         
         <hr className="horzLine"/>
       
-      <label id="trainingTimeLabel" > TRAINING TIME 
+      <label id="trainingTimeLabel" > TRAININGS TIME 
        </label>
-      
-    {/* // BACKGROUND PICTURE  */}
-          <img
-            className="logoImg"
-            src={Logo}
-            alt="berolina-stralau logo"
-        />             
-      
-    
     
       <div className="timerCells">
 
@@ -96,9 +96,9 @@ class Settings extends React.Component {
           
                 
         <div className="innerTimerCells">
-      <input type="number" className="inputCell" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
+      <input type="number" className="inputCell" maxLength="2" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
       <div className="semicolon">:</div> 
-      <input type="number" className="inputCell" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
+      <input type="number" className="inputCell" maxLength="2" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
         </div>
         
         <img
