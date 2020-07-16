@@ -45,12 +45,14 @@ class Settings extends React.Component {
     this.setState({ trainingTimeSeconds });
   }
   
-    setBreakTimeMinutes(event) {
-    this.setState({ breakTimeMinutes: parseInt(event.target.value) })
+  setBreakTimeMinutes(event) {
+          const breakTimeMinutes = String(parseInt(event.target.value, 10)).padStart(2, '0');
+    this.setState({ breakTimeMinutes });
   }
   
   setBreakTimeSeconds(event) {
-    this.setState({ breakTimeSeconds: parseInt(event.target.value) })
+              const breakTimeSeconds = String(parseInt(event.target.value, 10)).padStart(2, '0');
+    this.setState({ breakTimeSeconds: parseInt(event.target.value) });
   }
 
   setRepetitions (event) {
