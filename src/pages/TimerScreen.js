@@ -10,6 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Settings from './Settings';
 
 
 class TimerScreen extends React.Component {
@@ -42,9 +43,10 @@ class TimerScreen extends React.Component {
 
   
 state = {
-  minutes: 0,
-  seconds: 2,
-  reps: 3
+  minutes: 
+    <Settings {this.props.trainingTimeMinutes}/>,
+  seconds: 0,
+  reps: 0
 }
 
   render() {
