@@ -33,18 +33,14 @@ class Settings extends React.Component {
 
   setTrainingTimeMinutes(event) {
     const trainingTimeMinutes = String(parseInt(event.target.value, 10)).padStart(2, '0');
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
-
 
         this.setState({ trainingTimeMinutes });
     // same as without when same name
         // this.setState({ trainingTimeMinutes: trainingTimeMinutes });
     
     this.props.setTrainingTimeMinutes(trainingTimeMinutes);
+    console.log('    this.props.setTrainingTimeMinutes',     this.props.setTrainingTimeMinutes)
   }
-
-  // export default currentMinutesState;
-
 
    
   setTrainingTimeSeconds(event) {

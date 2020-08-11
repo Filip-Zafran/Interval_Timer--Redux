@@ -20,6 +20,7 @@ class TimerScreen extends React.Component {
     super(props);
     this.props = props;
 
+ console.log('this.props.trainingTimeMinutes', parseInt(this.props.trainingTimeMinutes))
     // this.props.setTrainingTimeMinutes;
   }
 
@@ -48,11 +49,12 @@ class TimerScreen extends React.Component {
         clearInterval(this.myInterval)
     }
 
-      state = {
-        minutes: 2,
-      seconds: 0,
-  reps: 0
-}
+
+  state = {         
+    minutes: this.props.trainingTimeMinutes,
+    seconds: 0,
+    reps: 0
+  }
   
 
 
