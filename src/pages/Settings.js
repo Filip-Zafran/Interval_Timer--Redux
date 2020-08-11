@@ -5,17 +5,18 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { connect } from 'react-redux';
 import Logo from "../images/logo.png";
 import Plus from "../images/plus.png";
 import Minus from "../images/minus.png";
 import Timer from "../images/timer.png";
-
-
+import TimerScreen from './TimerScreen';
 
 class Settings extends React.Component {
 
   constructor(props) {
     super(props);
+    this.props = props;
     this.state = {
       trainingTimeMinutes: '00', trainingTimeSeconds: '00',
       breakTimeMinutes: '00', breakTimeSeconds: '00',
@@ -30,16 +31,22 @@ class Settings extends React.Component {
     this.setRepetitions = this.setRepetitions.bind(this);
   }
 
-
   setTrainingTimeMinutes(event) {
     const trainingTimeMinutes = String(parseInt(event.target.value, 10)).padStart(2, '0');
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 
-    this.setState({ trainingTimeMinutes });
+
+        this.setState({ trainingTimeMinutes });
     // same as without when same name
         // this.setState({ trainingTimeMinutes: trainingTimeMinutes });
+    
+    this.props.setTrainingTimeMinutes(trainingTimeMinutes);
   }
-  
+
+  // export default currentMinutesState;
+
+
+   
   setTrainingTimeSeconds(event) {
     const trainingTimeSeconds = String(parseInt(event.target.value, 10)).padStart(2, '0');
     this.setState({ trainingTimeSeconds });
@@ -58,7 +65,7 @@ class Settings extends React.Component {
   setRepetitions (event) {
     this.setState({ repetitions: parseInt(event.target.value) })
   }
- render () {
+  render() {
    return (
       
      // BACKHROUND IMAGE CHANGE i vrati BACKGROUND IMAGE KAJ JE IZBRISAO
@@ -101,7 +108,12 @@ class Settings extends React.Component {
       <input type="number" className="inputCell" maxLength="2" value={this.state.trainingTimeMinutes} onChange={this.setTrainingTimeMinutes} /> 
       <div className="semicolon">:</div> 
       <input type="number" className="inputCell" maxLength="2" value={this.state.trainingTimeSeconds} onChange={this.setTrainingTimeSeconds} /> 
-        </div>
+        
+         </div>
+         
+    
+         
+
         
         <img
             id="plusImgTT"
@@ -167,13 +179,13 @@ class Settings extends React.Component {
         
       <br />
          
-      <div id="buttonDiv">
-              
-                  <Link to="/TimerScreen"
-        className="goButton">GO</Link>
+       <div id="buttonDiv">
+         
+         <Link to="/TimerScreen"
+           className="goButton">GO</Link>     
                 
         </div>
-            <br />
+        <br />
 
        
       <div id="beepSettings">
@@ -238,4 +250,11 @@ class Settings extends React.Component {
   );
 }
 }
-export default Settings;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setTrainingTimeMinutes: (minutes) => dispatch({ type: 'SET_TRAINING_TIME_MINUTES', payload: minutes }),
+    // setBreakMinutes: (minutes) => dispatch({ type: 'SET_BREAK_MINUTES', payload: minutes }),
+  };
+};
+export default connect(null, mapDispatchToProps)(Settings);

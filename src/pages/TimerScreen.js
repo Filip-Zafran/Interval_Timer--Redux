@@ -10,14 +10,21 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { connect } from 'react-redux';
 import Settings from './Settings';
 
 
 class TimerScreen extends React.Component {
 
+  constructor(props) { 
+    super(props);
+    this.props = props;
 
-     componentDidMount() {
-  this.myInterval = setInterval(() => {
+    // this.props.setTrainingTimeMinutes;
+  }
+
+  componentDidMount() {
+    this.myInterval = setInterval(() => {
     const { seconds, minutes } = this.state
     if (seconds > 0) {
       this.setState(({ seconds }) => ({
@@ -41,15 +48,17 @@ class TimerScreen extends React.Component {
         clearInterval(this.myInterval)
     }
 
-  
-state = {
-  minutes: 
-    <Settings {this.props.trainingTimeMinutes}/>,
-  seconds: 0,
+      state = {
+        minutes: 2,
+      seconds: 0,
   reps: 0
 }
+  
+
 
   render() {
+
+
       
     const { minutes, seconds, reps } = this.state
     
@@ -124,4 +133,11 @@ state = {
     }
   
 }
-export default TimerScreen;
+
+const mapStateToProps = (state) => {
+  return {
+    trainingTimeMinutes: state.trainingTimeMinutes,
+  };
+}
+
+export default connect(mapStateToProps)(TimerScreen);

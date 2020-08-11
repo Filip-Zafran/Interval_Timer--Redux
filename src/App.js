@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,11 +20,11 @@ class App extends React.Component {
       <Switch>
       
         <Route path="/TimerScreen">
-          <TimerScreen/>
-          </Route>
+          <TimerScreen />
+        </Route>
           
           <Route path="/PauseScreen">
-          <PauseScreen/>
+          <PauseScreen />
           </Route>
 
       
