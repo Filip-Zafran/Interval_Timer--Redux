@@ -260,13 +260,13 @@ h2 {
 	justify-content: center;
 }
 
-.coundownTime {
+.countdown-time {
 	font-size: 111px;
 	display: flex;
 	justify-content: center;
 }
 
-.countdownClock {
+.countdown-clock {
 	display: flex;
 	justify-content: center;
 	font-size: 111px;

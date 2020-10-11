@@ -63,14 +63,14 @@ class TimerScreenResume extends React.Component {
 
 				<img className="logo-img" src={Logo} alt="berolina-stralau logo" />
 
-				<div className="countdownClock">
+				<div className="countdown-clock">
 					{minutes === 0 && seconds === 0 ? (
 						<div className="time-is-up">
 							{' '}
 							Time is up! <br /> 00:00
 						</div>
 					) : (
-						<div className="coundownTime">
+						<div className="countdown-time">
 							{' '}
 							{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 						</div>
