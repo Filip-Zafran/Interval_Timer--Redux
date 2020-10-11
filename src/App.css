@@ -3,20 +3,21 @@
 	color: #61dafb;
 }
 
-.mainDiv {
+.main-div {
 	color: rgb(90, 2, 2);
 	background-color: rgb(250, 187, 135);
 	font-family: 'Caveat Brush', cursive;
 	height: 160vh;
 }
 
-#trainingTimeLabel {
+/* #trainingTimeLabel {
 	font-size: 40px;
-}
+} */
 
-#beepSettings {
+#beep-settings {
 	justify-items: left;
 }
+
 
 label {
 	font-size: 35px;
@@ -27,17 +28,17 @@ label {
 	z-index: "1";
 }
 
-.beepCheckbox {
+.beep-checkbox {
 	margin-left: 80px;
 	opacity: 0.4;
 }
 
-.beepCheckbox2 {
+.beep-checkbox2 {
 	margin-left: 40px;
 	opacity: 0.4;
 }
 
-.beepLabel {
+.beep-label {
 	transition: opacity .2 ease;
 	font-size: 12px;
 	justify-content: left;
@@ -46,7 +47,7 @@ label {
 	opacity: 0.4;
 }
 
-.beepLabelOn {
+.beep-label-on {
 	transition: opacity .2 ease;
 	font-size: 12px;
 	justify-content: left;
@@ -55,16 +56,16 @@ label {
 	opacity: 1;
 }
 
-#labelSound {
+#label-sound {
 	font-size: 16px;
 }
 
-#checkboxSound {
+#checkbox-sound {
 	width: 90%;
 	height: 90%;
 }
 
-.beepDiv {
+.beep-div {
 	display: grid;
 	grid-template-columns: 50% 5%;
 }
@@ -73,7 +74,7 @@ h2 {
 	margin-bottom: 5px;
 }
 
-.inputCell {
+.input-cell {
 	width: 100px;
 	height: 80px;
 	font-size: 70px;
@@ -85,45 +86,45 @@ h2 {
 	background-color: moccasin;
 }
 
-.timerCells {
+.timer-cells {
 	display: grid;
 	align-items: center;
 	justify-items: center;
 	grid-template-columns: 15% 70% 15%;
 }
 
-#plusImgTT,
-#minusImgTT {
+#plus-imgTT,
+#minus-imgTT {
 	width: 35px;
 }
 
-#minusImgTTbeep,
-#plusImgTTbeep {
+#minus-imgTT-beep,
+#plus-imgTT-beep {
 	width: 15px;
 }
 
-#beepSettings {
+#beep-settings {
 	justify-content: left;
 	justify-items: left;
 	margin-left: 10px;
 }
 
-#timerImg {
+#timer-img {
 	width: 20px;
 }
 
-.innerTimerCells {
+.inner-timer-cells {
 	display: flex;
 	justify-content: center;
 }
 
-#buttonDiv {
+#button-div {
 	display: flex;
 	justify-content: center;
 	background-color: none;
 }
 
-#pauseDiv {
+#pause-div {
 	display: flex;
 	background-color: none;
 	/* position: absolute; */
@@ -135,7 +136,7 @@ h2 {
 	width: 100%;
 }
 
-.goButton {
+.go-bttn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -153,7 +154,7 @@ h2 {
 	z-index: 2;
 }
 
-#resetButtonBlue {
+#reset-button-blue {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -169,13 +170,29 @@ h2 {
 	text-shadow: 2px 3px #888888;
 }
 
-#setingsDiv {
+.setings-div {
 	display: flex;
 	justify-content: center;
 	width: 100%;
 }
 
-.settingsButton {
+.reset-bttn {
+	display: flex;
+	width: 90%;
+	height: 60px;
+	background-color: rgba(119, 14, 14, 0.986);
+	align-items: center;
+	justify-content: center;
+	color: rgb(7, 6, 6);
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: bold;
+	border: none;
+	box-shadow: 3px 6px #888888;
+	text-shadow: 2px 3px #888888;
+}
+
+.settings-bttn {
 	display: flex;
 	width: 90%;
 	height: 100px;
@@ -212,35 +229,32 @@ h2 {
 	font-weight: italic;
 }
 
-.horzLine {
+.horz-line {
 	margin-top: 10px;
 	height: 5px;
 	color: moccasin;
 }
 
-.logoImg {
+.logo-img {
 	width: 100%;
 	opacity: 0.07;
 	position: absolute;
 	z-index: 0;
 }
 
-#circleImg {
+#circle-img {
 	width: 100%;
 	margin-bottom: 30%;
-	/* margin-top: 20%; */
-	/* position: absolute;
-	z-index: 1; */
 }
 
-.repetitionsCount {
+.repetitions-count {
 	display: flex;
 	justify-content: center;
 	font-size: 33px;
 	z-index: "1";
 }
 
-.timeIsUp {
+.time-is-up {
 	font-size: 55px;
 	display: flex;
 	justify-content: center;

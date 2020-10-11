@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Settings from './Settings';
 
-class TimerScreen extends React.Component {
+class TimerScreenStart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
@@ -84,14 +84,20 @@ class TimerScreen extends React.Component {
 				</div>
 
 				<div id="pause-div">
-					<Link to="/PauseScreen" className="goButton">
+					<Link to="/PauseScreen" className="go-bttn">
 						PAUSE
+					</Link>
+				</div>
+				<br />
+				<div className="setings-div">
+					<Link to="/" className="reset-bttn">
+						RESET
 					</Link>
 				</div>
 				<br />
 
 				<div className="setings-div">
-					<Link to="/" className="settingsButton">
+					<Link to="/" className="settings-bttn ">
 						SETTINGS
 					</Link>
 				</div>
@@ -111,4 +117,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(TimerScreen);
+export default connect(mapStateToProps)(TimerScreenStart);

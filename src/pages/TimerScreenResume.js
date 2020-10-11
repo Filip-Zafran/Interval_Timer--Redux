@@ -1,5 +1,6 @@
 import React from 'react';
 import UIfx from 'uifx';
+// https://www.npmjs.com/package/uifx
 import Logo from '../images/logo.png';
 import Timer from '../images/timer.png';
 import Circle from '../images/circle.png';
@@ -7,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Settings from './Settings';
 
-class TimerScreen extends React.Component {
+class TimerScreenResume extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
@@ -91,7 +92,7 @@ class TimerScreen extends React.Component {
 				<br />
 
 				<div className="setings-div">
-					<Link to="/" className="settingsButton">
+					<Link to="/" className="settings-bttn ">
 						SETTINGS
 					</Link>
 				</div>
@@ -111,4 +112,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(TimerScreen);
+export default connect(mapStateToProps)(TimerScreenResume);
