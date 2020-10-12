@@ -54,13 +54,12 @@ class Settings extends React.Component {
 	}
 	render() {
 		return (
-			// BACKHROUND IMAGE CHANGE i vrati BACKGROUND IMAGE KAJ JE IZBRISAO
-
-			<div className="main-div" style={{ backgroundImage: Logo }}>
+			<div className="main-div">
 				<div id="header">
 					<img id="timer-img" src={Timer} alt="timer symbol" />
 					&nbsp; &nbsp;Interval Training Timer&nbsp;&nbsp;
 					<img id="timer-img" src={Timer} alt="timer symbol" />
+					<img className="logo-img" src={Logo} alt="berolina-stralau logo" />
 				</div>
 
 				<hr className="horz-line " />
@@ -212,7 +211,7 @@ class Settings extends React.Component {
 						<input
 							disabled={!this.state.sound}
 							id="checkboxCountdown"
-							className="beepCheckbox2"
+							className="beep-checkbox2"
 							type="checkbox"
 						/>
 					</div>

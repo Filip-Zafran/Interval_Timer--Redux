@@ -22,7 +22,7 @@ function trainingBreakMinutesReducer(state = 0, action) {
 
 const reducer = combineReducers({
 	trainingTimeMinutes: trainingTimeMinutesReducer,
-	breakTimeMinutes: trainingTimeMinutesReducer
+	breakTimeMinutes: trainingBreakMinutesReducer
 });
 
 export const store = createStore(reducer);
