@@ -5,15 +5,11 @@ import Timer from '../images/timer.png';
 import Circle from '../images/circle.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Settings from './Settings';
 
 class TimerScreenStart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
-
-		console.log('this.props.trainingTimeMinutes', parseInt(this.props.trainingTimeMinutes));
-		// this.props.setTrainingTimeMinutes;
 	}
 
 	componentDidMount() {
@@ -71,7 +67,7 @@ class TimerScreenStart extends React.Component {
 					) : (
 						<div className="countdown-time">
 							{' '}
-							{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+							{minutes < 10 ? `${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 						</div>
 					)}
 				</div>
@@ -90,7 +86,7 @@ class TimerScreenStart extends React.Component {
 				</div>
 				<br />
 				<div className="setings-div">
-					<Link to="/" className="reset-bttn">
+					<Link to="/TimerScreenStart" className="reset-bttn">
 						RESET
 					</Link>
 				</div>

@@ -5,7 +5,6 @@ import Logo from '../images/logo.png';
 import Plus from '../images/plus.png';
 import Minus from '../images/minus.png';
 import Timer from '../images/timer.png';
-import TimerScreenStart from './TimerScreenStart';
 
 class Settings extends React.Component {
 	constructor(props) {
@@ -33,9 +32,6 @@ class Settings extends React.Component {
 		this.setState({ trainingTimeMinutes });
 		// same as without when same name
 		// this.setState({ trainingTimeMinutes: trainingTimeMinutes });
-
-		this.props.setTrainingTimeMinutes(trainingTimeMinutes);
-		console.log('    this.props.setTrainingTimeMinutes', this.props.setTrainingTimeMinutes);
 	}
 
 	setTrainingTimeSeconds(event) {
@@ -151,7 +147,6 @@ class Settings extends React.Component {
 				<div id="beep-settings">
 					<h2>SOUND SETTINGS </h2>
 
-					{/* 2 X CLASS I ID ?!?!?!?! */}
 					<div className="beep-div">
 						<label className="beep-label" className="beep-label-on" id="label-sound">
 							{' '}
@@ -246,10 +241,12 @@ class Settings extends React.Component {
 	}
 }
 
+// ACTION
+
 const mapDispatchToProps = (dispatch) => {
 	return {
-		setTrainingTimeMinutes: (minutes) => dispatch({ type: 'SET_TRAINING_TIME_MINUTES', payload: minutes })
-		// setBreakMinutes: (minutes) => dispatch({ type: 'SET_BREAK_MINUTES', payload: minutes }),
+		setTrainingTimeMinutes: (minutes) => dispatch({ type: 'SET_TRAINING_TIME_MINUTES', payload: minutes }),
+		setBreakMinutes: (minutes) => dispatch({ type: 'SET_BREAK_MINUTES', payload: minutes })
 	};
 };
 export default connect(null, mapDispatchToProps)(Settings);

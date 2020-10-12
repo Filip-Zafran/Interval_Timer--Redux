@@ -15,10 +15,10 @@ class PauseScreen extends React.Component {
 
 				<hr className="horz-line " />
 
-				<img className="logo-imgg" src={Logo} alt="berolina-stralau logo" />
+				<img className="logo-img" src={Logo} alt="berolina-stralau logo" />
 
 				<div id="button-div">
-					<Link to="/PauseScreen" id="reset-button-blue ">
+					<Link to="/TimerScreenResume" className="reset-button-blue ">
 						RESUME
 					</Link>
 				</div>

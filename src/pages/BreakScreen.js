@@ -5,15 +5,12 @@ import Timer from '../images/timer.png';
 import Circle from '../images/circle.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Settings from './Settings';
+import TimerScreenResume from './TimerScreenResume';
 
-class TimerScreen extends React.Component {
+class BreakScreen extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
-
-		console.log('this.props.trainingTimeMinutes', parseInt(this.props.trainingTimeMinutes));
-		// this.props.setTrainingTimeMinutes;
 	}
 
 	componentDidMount() {
@@ -42,13 +39,12 @@ class TimerScreen extends React.Component {
 	}
 
 	state = {
-		minutes: this.props.trainingTimeMinutes,
-		seconds: 0,
-		reps: 0
+		minutes: this.props.breakTimeMinutes,
+		seconds: 0
 	};
 
 	render() {
-		const { minutes, seconds, reps } = this.state;
+		const { minutes, seconds } = this.state;
 
 		return (
 			<div className="main-div">
@@ -62,36 +58,35 @@ class TimerScreen extends React.Component {
 
 				<img className="logo-img" src={Logo} alt="berolina-stralau logo" />
 
+				{/* CHANGE CODE HERE */}
 				<div className="countdown-clock">
 					{minutes === 0 && seconds === 0 ? (
-						<div className="time-is-up">
-							{' '}
-							Time is up! <br /> 00:00
-						</div>
+						<TimerScreenResume />
 					) : (
 						<div className="countdown-time">
 							{' '}
-							{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+							{minutes < 10 ? `${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
 						</div>
 					)}
 				</div>
 
 				<img id="circle-img" src={Circle} />
 
-				<div className="repetitions-count">
-					{' '}
-					<i>reps left: {reps}</i>{' '}
-				</div>
-
 				<div id="pause-div">
-					<Link to="/PauseScreen" className="goButton">
+					<Link to="/PauseScreen" className="go-bttn">
 						PAUSE
+					</Link>
+				</div>
+				<br />
+				<div className="setings-div">
+					<Link to="/TimerScreenStart" className="reset-bttn">
+						RESET
 					</Link>
 				</div>
 				<br />
 
 				<div className="setings-div">
-					<Link to="/" className="settingsButton">
+					<Link to="/" className="settings-bttn ">
 						SETTINGS
 					</Link>
 				</div>
@@ -111,4 +106,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(TimerScreen);
+export default connect(mapStateToProps)(BreakScreen);

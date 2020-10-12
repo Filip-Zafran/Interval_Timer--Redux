@@ -1,6 +1,5 @@
 import React from 'react';
 import UIfx from 'uifx';
-// https://www.npmjs.com/package/uifx
 import Logo from '../images/logo.png';
 import Timer from '../images/timer.png';
 import Circle from '../images/circle.png';
@@ -12,9 +11,6 @@ class TimerScreenResume extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
-
-		console.log('this.props.trainingTimeMinutes', parseInt(this.props.trainingTimeMinutes));
-		// this.props.setTrainingTimeMinutes;
 	}
 
 	componentDidMount() {
@@ -85,7 +81,7 @@ class TimerScreenResume extends React.Component {
 				</div>
 
 				<div id="pause-div">
-					<Link to="/PauseScreen" className="goButton">
+					<Link to="/PauseScreen" className="go-bttn">
 						PAUSE
 					</Link>
 				</div>
